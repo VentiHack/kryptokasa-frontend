@@ -1,0 +1,48 @@
+.pricing {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pricing_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.pricing_form input {
+  margin-bottom: 10px;
+}
+
+.pricing_form_inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.pricing_assets {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.pricing_assets table {
+  border-collapse: collapse;
+}
+.pricing_assets table td,
+.pricing_assets table th {
+  padding: 5px;
+  border-collapse: collapse;
+  height: 30px;
+}
+.pricing_assets table th {
+  text-align: left;
+}
+.pricing_assets input {
+  margin-bottom: 10px;
+}/*# sourceMappingURL=pricing.css.map */

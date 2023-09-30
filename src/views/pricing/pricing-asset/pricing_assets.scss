@@ -1,0 +1,29 @@
+@import "../../../styles/mixins.scss";
+
+.pricing_asset {
+  .pricing_asset_index {
+    width: 30px;
+  }
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  //   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+  .pricing_asset_currency {
+    min-width: 150px;
+    @include flex(row, flex-start, center);
+
+    img {
+      height: 1.25rem;
+      margin-right: 0.25rem;
+    }
+    .pricing_asset_name {
+      font-weight: 700;
+    }
+    .pricing_asset_ticker {
+      font-weight: bold;
+      font-weight: 400;
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../styles/mixins.scss";
+.pricing {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  @include flex(column, flex-start, center);
+}
+.pricing_form {
+  @include flex(column, flex-start, center);
+
+  input {
+    margin-bottom: 10px;
+  }
+}
+.pricing_form_inputs {
+  @include flex(column, flex-start, flex-start);
+  margin-bottom: 4rem;
+}
+.pricing_assets {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  table {
+    // border: 1px solid rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+    td,
+    th {
+      padding: 5px;
+      // border: 1px solid rgba(0, 0, 0, 0.5);
+      border-collapse: collapse;
+      height: 30px;
+    }
+    th {
+      text-align: left;
+    }
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+}
