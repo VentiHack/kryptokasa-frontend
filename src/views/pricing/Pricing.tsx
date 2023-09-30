@@ -1,21 +1,21 @@
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 
 import "./pricing.scss";
 import "../../styles/global.scss";
 import IAsset from "../../ts/interfaces/Asset";
 import PricingAsset from "./pricing-asset/PricingAsset";
+import NewAsset from "./new-asset/NewAsset";
 const Pricing = () => {
-  const [assets, setAssets] = useState<IAsset[]>([
-    { ticker: "BTC", name: "Bitcoin", amount: 2 },
-    { ticker: "BTC", name: "Bitcoin", amount: 2 },
-    { ticker: "BTC", name: "Bitcoin", amount: 2 },
-    { ticker: "BTC", name: "Bitcoin", amount: 2 },
-    { ticker: "BTC", name: "Bitcoin", amount: 2 },
-  ]);
+  const [assets, setAssets] = useState<IAsset[]>([]);
+
+  const addAsset = (e: MouseEvent<HTMLButtonElement>, asset: IAsset) => {
+    e.preventDefault();
+    console.log(asset);
+    setAssets([...assets, asset]);
+  };
 
   return (
     <div className="pricing">
-      {" "}
       <form action="" className="pricing_form">
         <h3>Wprowadź dane</h3>
         <div className="pricing_form_inputs">
@@ -46,12 +46,14 @@ const Pricing = () => {
                 <th>#</th>
                 <th>Waluta</th>
                 <th>Ilość</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
               {assets.map((asset: IAsset, index: number) => (
                 <PricingAsset asset={asset} index={index + 1} />
               ))}
+              <NewAsset addAsset={addAsset} />
             </tbody>
           </table>{" "}
         </div>

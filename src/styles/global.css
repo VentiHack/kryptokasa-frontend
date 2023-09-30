@@ -1,5 +1,16 @@
 .input {
-  border-radius: 5px;
+  border-radius: 0px;
   padding: 5px;
   border: 1px solid #777;
+}
+
+.btn {
+  border-radius: 0px;
+  padding: 5px;
+  border: none;
+}
+
+.btn_green {
+  background-color: #4bcc00;
+  color: white;
 }/*# sourceMappingURL=global.css.map */

@@ -21,6 +21,7 @@ const PricingAsset = ({ asset, index }: Props) => {
         <div className="pricing_asset_ticker">{asset.ticker}</div>
       </td>
       <td>{asset.amount}</td>
+      <td></td>
     </tr>
   );
 };

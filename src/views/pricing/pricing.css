@@ -1,5 +1,5 @@
 .pricing {
-  margin-top: 10rem;
+  margin-top: 3rem;
   margin-bottom: 10rem;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .pricing_assets {
@@ -38,7 +38,7 @@
 .pricing_assets table th {
   padding: 5px;
   border-collapse: collapse;
-  height: 30px;
+  height: 45px;
 }
 .pricing_assets table th {
   text-align: left;

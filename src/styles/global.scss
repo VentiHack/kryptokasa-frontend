@@ -1,6 +1,17 @@
 @import "./variables.scss";
 .input {
-  border-radius: 5px;
+  border-radius: 0px;
   padding: 5px;
   border: 1px solid $primaryGrey;
+}
+
+.btn {
+  border-radius: 0px;
+  padding: 5px;
+  border: none;
+}
+
+.btn_green {
+  background-color: $primaryGreen;
+  color: white;
 }

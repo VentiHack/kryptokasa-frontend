@@ -1,6 +1,6 @@
 @import "../../styles/mixins.scss";
 .pricing {
-  margin-top: 10rem;
+  margin-top: 3rem;
   margin-bottom: 10rem;
   @include flex(column, flex-start, center);
 }
@@ -13,7 +13,7 @@
 }
 .pricing_form_inputs {
   @include flex(column, flex-start, flex-start);
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .pricing_assets {
   display: flex;
@@ -29,7 +29,7 @@
       padding: 5px;
       // border: 1px solid rgba(0, 0, 0, 0.5);
       border-collapse: collapse;
-      height: 30px;
+      height: 45px;
     }
     th {
       text-align: left;
