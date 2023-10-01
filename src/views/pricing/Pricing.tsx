@@ -102,7 +102,7 @@ const Pricing = () => {
       .then((res) => {
         console.log(res.data);
         if (res.status === 200) {
-          window.open(`http://localhost:8000/${res.data.pdf_file_path}`);
+          window.open(`http://127.0.0.1:8000/${res.data.pdf_file_path}`);
         }
       })
       .catch((err) => {
