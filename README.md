@@ -14,3 +14,9 @@ cd kryptokasa-frontend
 npm install
 npm run dev
 ```
+
+2. Go to:
+
+```bash
+http://127.0.0.1:5173/
+```
