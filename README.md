@@ -16,7 +16,4 @@ npm run dev
 ```
 
 2. Go to:
-
-```bash
-[Visit app http://127.0.0.1:5173/](http://127.0.0.1:5173/)
-```
+   [Visit app http://127.0.0.1:5173/](http://127.0.0.1:5173/)
