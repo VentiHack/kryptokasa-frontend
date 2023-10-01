@@ -10,5 +10,7 @@ This is a starter template for a TypeScript app using Vite.
 
 ```bash
 git clone https://github.com/VentiHack/kryptokasa-frontend.git
-cd vite-typescript-app
+cd kryptokasa-frontend
+npm install
+npm run dev
 ```
