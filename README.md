@@ -15,5 +15,5 @@ npm install
 npm run dev
 ```
 
-2. Go to:
-   [Visit app http://127.0.0.1:5173/](http://127.0.0.1:5173/)
+2. Visit app:
+   [http://127.0.0.1:5173/](http://127.0.0.1:5173/)
