@@ -8,6 +8,7 @@ import IAsset from "../../../ts/interfaces/Asset";
 
 type Props = {
   addAsset: (e: MouseEvent<HTMLButtonElement>, asset: IAsset) => void;
+  fetchedAssets: IAsset[];
 };
 
 const Option = ({ innerProps, label, data }) => {
@@ -28,8 +29,7 @@ const Option = ({ innerProps, label, data }) => {
   );
 };
 
-const NewAsset = ({ addAsset }: Props) => {
-  const { setLoading } = useLoading();
+const NewAsset = ({ addAsset, fetchedAssets }: Props) => {
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -45,44 +45,33 @@ const NewAsset = ({ addAsset }: Props) => {
     }),
   };
   const [options, setOptions] = useState([]);
-  const fetchAssets = () => {
-    setLoading({
-      state: true,
-      content: <h3>Pobieranie walut...</h3>,
-    });
-    axios
-      .get(`http://127.0.0.1:8000/api/assets/`)
-      .then((res) => {
-        setOptions(
-          res.data.map((asset: IAsset) => {
-            return {
-              value: asset.ticker,
-              img_url: asset.img_url,
-              name: asset.name,
-              ticker: asset.ticker,
-              label: asset.ticker,
-            };
-          })
-        );
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setLoading({
-          state: false,
-          content: <h3>Ładowanie...</h3>,
-        });
-      });
-  };
+
   const [selectedCurrency, setSelectedCurrency] = useState<IAsset | null>(null);
   const [amount, setAmount] = useState(0);
-  useEffect(fetchAssets, []);
-
+  useEffect(() => {
+    if (fetchedAssets.length > 0) {
+      setOptions(
+        fetchedAssets.map((asset: IAsset) => {
+          return {
+            value: asset.ticker,
+            img_url: asset.img_url,
+            name: asset.name,
+            ticker: asset.ticker,
+            label: asset.ticker,
+          };
+        })
+      );
+    }
+  }, [fetchedAssets]);
   return (
     <tr>
       <td className="td_new_asset"></td>
-      <td className="pricing_asset_currency">
+      <td
+        className="pricing_asset_currency"
+        style={{
+          padding: "2px",
+        }}
+      >
         <Select
           options={options}
           isSearchable={false}
@@ -107,17 +96,23 @@ const NewAsset = ({ addAsset }: Props) => {
           placeholder="Ilość"
           style={{
             fontSize: "1rem",
-            height: "28px",
+            height: "27px",
           }}
           value={amount}
           onChange={(e) => setAmount(parseFloat(e.target.value))}
         />
       </td>
-      <td>
+      <td
+        style={{
+          padding: "0",
+          display: "flex",
+          alignItems: "flex-start",
+        }}
+      >
         <button
           style={{
             fontSize: "1rem",
-            height: "28px",
+            height: "38px",
           }}
           className="btn btn_green"
           onClick={(e) => {

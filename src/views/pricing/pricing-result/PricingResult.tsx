@@ -1,50 +1,42 @@
 // import { useState } from "react";
 import IPricingResult from "../../../ts/interfaces/PricingResult";
 import PricingResultRow from "./PricingResultRow";
-const PricingResult = () => {
-  //   const [pricingResults, setPricingResults] = useState<IPricingResult[]>([
-  const pricingResults: IPricingResult[] = [
-    {
-      providers_data: [
-        {
-          unit_price: 118400.0,
-          asset_price: 118400.0,
-          ticker: "BTC",
-          currency: "PLN",
-          api_url: "https://api.zondacrypto.exchange/rest",
-          exchange_name: "Zonda",
-        },
-        {
-          unit_price: 106560.0,
-          asset_price: 106560.0,
-          ticker: "BTC",
-          currency: "PLN",
-          api_url: "https://api.zondacrypto.exchange/rest",
-          exchange_name: "Binance",
-        },
-      ],
-      time: new Date(),
-    },
-    //   ]);
-  ];
-
+import "../../../styles/global.css";
+import {
+  calculateTotalAssetsValue,
+  formatNumberWithThousandsSeparator,
+} from "../../../utils";
+type Props = {
+  pricingResults: IPricingResult[];
+};
+const PricingResult = ({ pricingResults }: Props) => {
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Giełda</th>
-          <th>URL</th>
-          <th>Kurs</th>
-          <th>Wartość waluty</th>
-        </tr>
-      </thead>
-      <tbody>
-        {pricingResults.map((pricingResult: IPricingResult, index: number) => (
-          <PricingResultRow pricing_result={pricingResult} index={index} />
-        ))}
-      </tbody>
-    </table>
+    <>
+      <h2>Szacowane wartości</h2>
+      <table>
+        <thead></thead>
+        <tbody>
+          {pricingResults.map(
+            (pricingResult: IPricingResult, index: number) => (
+              <PricingResultRow pricing_result={pricingResult} index={index} />
+            )
+          )}
+          <tr></tr>
+          <tr className="pricing_asset">
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Łączna wartość:</th>
+            <th>
+              {formatNumberWithThousandsSeparator(
+                calculateTotalAssetsValue(pricingResults)
+              )}{" "}
+              zł
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </>
   );
 };
 

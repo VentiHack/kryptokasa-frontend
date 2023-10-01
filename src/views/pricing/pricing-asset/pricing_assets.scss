@@ -12,8 +12,9 @@
   @include flex(row, flex-start, center);
 
   img {
-    height: 1.25rem;
-    margin-right: 0.25rem;
+    width: 1.25rem;
+    margin-right: 0.5rem;
+    object-fit: contain;
   }
   .pricing_asset_name {
     font-weight: 700;

@@ -18,11 +18,18 @@
 }
 
 .pricing_form_inputs {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 2rem;
+}
+.pricing_form_inputs label {
+  margin-bottom: 10px;
+}
+.pricing_form_inputs input {
+  width: 100%;
 }
 
 .pricing_assets {
@@ -30,18 +37,6 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-}
-.pricing_assets table {
-  border-collapse: collapse;
-}
-.pricing_assets table td,
-.pricing_assets table th {
-  padding: 5px;
-  border-collapse: collapse;
-  height: 45px;
-}
-.pricing_assets table th {
-  text-align: left;
 }
 .pricing_assets input {
   margin-bottom: 10px;
